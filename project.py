@@ -39,13 +39,13 @@ def organization(message: types.Message) -> None:
             information = str(file.read())
             bot.send_message(message.chat.id, information)
     bot.send_document(message.chat.id, open(
-        "C:/Users/Егорио/Desktop/ПРОЕКТ/Организация.pdf", "rb"))
+        "Организация.pdf", "rb"))
     bot.send_document(message.chat.id, open(
-        "C:/Users/Егорио/Desktop/ПРОЕКТ/Банковские реквизиты.pdf", "rb"))
+        "Банковские реквизиты.pdf", "rb"))
     bot.send_document(message.chat.id, open(
-        "C:/Users/Егорио/Desktop/ПРОЕКТ/Режим образовательного процесса.pdf", "rb"))
+        "Режим образовательного процесса.pdf", "rb"))
     bot.send_document(message.chat.id, open(
-        "C:/Users/Егорио/Desktop/ПРОЕКТ/Режим работы.pdf", "rb"))
+        "Режим работы.pdf", "rb"))
 
 
 @bot.message_handler(commands=['events'])
@@ -62,11 +62,11 @@ def events(message: types.Message) -> None:
 @bot.message_handler(commands=['timetable'])
 def timetable(message: types.Message) -> None:
     bot.send_document(message.chat.id, open(
-       "C:/Users/Егорио/Desktop/ПРОЕКТ/Расписание_общее.pdf", "rb"))
+       "Расписание_общее.pdf", "rb"))
 
 @bot.message_handler(commands=['jingle'])
 def jingle(message: types.Message) -> None:
-    conn = sqlite3.connect("C:/Users/Егорио/Desktop/ПРОЕКТ/Звонки.db")
+    conn = sqlite3.connect("Звонки.db")
     cur = conn.cursor()
     cur.execute("SELECT * FROM 'Звонки'")
     results = cur.fetchmany(10)
